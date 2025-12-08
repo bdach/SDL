@@ -1107,8 +1107,7 @@ SDL_GLContext SDL_EGL_CreateContext(SDL_VideoDevice *_this, EGLSurface egl_surfa
         return NULL;
     }
 
-    // The default swap interval is 1, according to the spec
-    _this->egl_data->egl_swapinterval = 1;
+    _this->egl_data->egl_swapinterval = 0;
 
     if (!SDL_EGL_MakeCurrent(_this, egl_surface, (SDL_GLContext)egl_context)) {
         // Delete the context
